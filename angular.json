@@ -7,7 +7,7 @@
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
-          "style": "sass"
+          "style": "scss"
         }
       },
       "root": "",
@@ -28,9 +28,18 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.sass"
+              "src/sass/styles.scss"
             ],
-            "scripts": []
+            "stylePreprocessorOptions": {
+                "includePaths": [
+                    "node_modules/uikit/src/scss"
+                ]
+            },
+            "scripts": [
+                "node_modules/jquery/dist/jquery.min.js",
+                "node_modules/uikit/dist/js/uikit.min.js",
+                "node_modules/uikit/dist/js/uikit-icons.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -94,7 +103,11 @@
             "styles": [
               "src/styles.sass"
             ],
-            "scripts": []
+            "scripts": [
+                "node_modules/jquery/dist/jquery.min.js",
+                "node_modules/uikit/dist/js/uikit.min.js",
+                "node_modules/uikit/dist/js/uikit-icons.min.js"
+            ]
           }
         },
         "lint": {
